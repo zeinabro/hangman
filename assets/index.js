@@ -32,17 +32,20 @@ const checkLetter = (letter,word) => {
     }
 
     if (correct==false){
-        getHangmanImage() 
+        getHangmanImage(word) 
     }
 
-    if (hiddenWord.textContent==word){
+    if (hiddenWord.textContent==word && correct==true){
+        for (let i=0;i<word.length;i++){
+            hiddenWord.childNodes[i].textContent=word[i]
+        }
         showResults(true)
     }
 
     return correct
 }
 
-const getHangmanImage = () => {
+const getHangmanImage = (word) => {
     hangManImage.textContent=""
     let img = document.createElement('img')
     if (chances>0){
@@ -52,13 +55,16 @@ const getHangmanImage = () => {
         hangManImage.appendChild(img)
     } else {
         showResults(false)
+        for (let i=0;i<word.length;i++){
+            hiddenWord.childNodes[i].textContent=word[i]
+        }
         //show full word - definition from dictionary api?
         //display text
     }
 }
 
 const showResults = (win) => {
-    if (win==true){
+    if (win===true){
         alert('Correct')
     } else {
         alert ('Game Over')
