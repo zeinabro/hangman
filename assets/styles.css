@@ -1,0 +1,37 @@
+body{
+    background-color: plum;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.hiddenWord p{
+    display: inline;
+    font-size: 40px;
+}
+
+#randomWord {
+    font-size: 20px;
+}
+
+button{
+    font-size: 20px;
+}
+
+button:disabled{
+    background-color: grey;
+}
+
+.correct:disabled{
+    background-color: #3CB371;
+}
+
+.incorrect:disabled{
+    background-color: #CD5C5C;
+}
+
+
+
+.hangman img{
+    width:250px;
+    padding: 20px;
+}
